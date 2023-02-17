@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link href="{{ url_for('static',filename = 'css/style.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ url_for('static', filename='img/rehan_fav.ico')}}">
+</head>
+
+<body background="{{ url_for('static',filename ='img/storm-2.jpg')}}" style=" background-size: 1800px 650px;">
+    <div class="main">
+        <div class="register">
+            <h2>City : {{city}}</h2>
+            <h3>TIME : {{tm}}</h3>
+
+            <form id="register" action="/" method="post">
+                <label style="margin-left:4px">Enter Location</label><br>
+                <input style="margin-top:10px" type="text" id="city" name="city" placeholder="eg.Kolkata" required>
+                <br>
+                <br>
+                <input type="submit" value="Check" name="submit" id="submit">
+            </form>
+                <label>Weather      : {{wea_main}}</label><br>
+                <label>Temparature  : {{temp}}°C</label><br>
+                <label>Humidity     : {{humid}} %</label><br>
+                <label>Wind         : {{speed}}kmph</label><br>
+                <label>Zone         : {{timezone}}</label><br>
+                <br>
+                <br>
+        </div>
+    </div>
+</body>
+</html>
